@@ -129,7 +129,7 @@ body nav:hover {
   background-size: contain;
   min-height: 100vh;
   width: 100vw;
-  background-attachment: fixed;
+  background-attachment: scroll;
 }
 
 @media screen and (min-width: 350px) and (orientation: portrait) {
@@ -170,7 +170,7 @@ body nav:hover {
   /* stylelint-disable-line */
   min-height: 100vh;
   width: 100vw;
-  background-attachment: fixed;
+  background-attachment: scroll;
   /* LANDING PAGE */
   /* BIO */
   /* PORTFOLIO */
@@ -271,30 +271,6 @@ body nav:hover {
 .inverse-container .name h1 {
   font-size: 2.5em;
   font-weight: 1000;
-  -webkit-animation: slide-in-from-top 0.5s;
-          animation: slide-in-from-top 0.5s;
-}
-
-@-webkit-keyframes slide-in-from-top {
-  0% {
-    -webkit-transform: scaleY(0);
-            transform: scaleY(0);
-  }
-  100% {
-    -webkit-transform: scaleY(1);
-            transform: scaleY(1);
-  }
-}
-
-@keyframes slide-in-from-top {
-  0% {
-    -webkit-transform: scaleY(0);
-            transform: scaleY(0);
-  }
-  100% {
-    -webkit-transform: scaleY(1);
-            transform: scaleY(1);
-  }
 }
 
 .inverse-container .name h2 {

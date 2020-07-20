@@ -32,7 +32,6 @@ const animateOnScroll = () => {
 };
 animateOnScroll();
 
-// Animate email modal 
 // ANIMATE EMAIL MODAL
 
 const modal = document.querySelector('#modal');
