@@ -126,7 +126,7 @@ body nav:hover {
 
 /* SPLIT BACKGROUND */
 .container {
-  background-image: linear-gradient(95deg, transparent, transparent 50%, #f5f0f6 50.2%, #f5f0f6), url("./images/stars-landscape.jpg");
+  background-image: linear-gradient(95deg, #14141a, #191A1E 50%, #f5f0f6 50.2%, #f5f0f6), url("./images/stars-landscape.jpg");
   min-height: 100vh;
   width: 100vw;
   background-attachment: scroll;
@@ -134,30 +134,38 @@ body nav:hover {
   background-position: 0px 0px;
   background-repeat: repeat;
   background-size: 200% 100%;
-  -webkit-animation: animatedBackground 1s ease-in forwards;
-          animation: animatedBackground 1s ease-in forwards;
+  -webkit-animation: animatedBackground 1.5s ease-in 0.2s forwards;
+          animation: animatedBackground 1.5s ease-in 0.2s forwards;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
 }
 
 @-webkit-keyframes animatedBackground {
   0% {
-    background-position: -10% 0%;
+    background-position: 0% 0%;
+  }
+  80% {
+    background-position: 60% 100%;
   }
   100% {
-    background-position: 50% 0%;
+    background-position: 55% 0%;
   }
 }
 
 @keyframes animatedBackground {
   0% {
-    background-position: -10% 0%;
+    background-position: 0% 0%;
+  }
+  80% {
+    background-position: 60% 100%;
   }
   100% {
-    background-position: 50% 0%;
+    background-position: 55% 0%;
   }
 }
 
 .inverse-container {
-  background-image: linear-gradient(95deg, #f5f0f6, #f5f0f6 50%, transparent 50.2%, transparent), url("./images/stars-landscape.jpg");
+  background-image: linear-gradient(95deg, #f5f0f6, #f5f0f6 50%, #191A1E 50.2%, #14141a), url("./images/stars-landscape.jpg");
   background-size: contain;
   background-clip: text;
   -webkit-background-clip: text;
@@ -169,8 +177,10 @@ body nav:hover {
   background-position: 0px 0px;
   background-repeat: repeat;
   background-size: 200% 100%;
-  -webkit-animation: animatedBackground 1s ease-in forwards;
-          animation: animatedBackground 1s ease-in forwards;
+  -webkit-animation: animatedBackground 1.5s ease-in 0.2s forwards;
+          animation: animatedBackground 1.5s ease-in 0.2s forwards;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
   /* LANDING PAGE */
   /* BIO */
   /* PORTFOLIO */
@@ -182,8 +192,11 @@ body nav:hover {
   0% {
     background-position: 0% 0%;
   }
+  80% {
+    background-position: 60% 100%;
+  }
   100% {
-    background-position: 50% 0%;
+    background-position: 55% 0%;
   }
 }
 
