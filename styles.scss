@@ -12,6 +12,7 @@ $transparent: transparent;
   font-family: 'Raleway', 'Work Sans', sans-serif;
   text-align: center;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -119,64 +120,101 @@ body {
 /* SPLIT BACKGROUND */
 
 .container {
-  background-image: linear-gradient(95deg, $transparent, $transparent 38%, $light-color 38.2%, $light-color), $background;
-  background-size: contain;
+  background-image: linear-gradient(95deg, $transparent, $transparent 50%, $light-color 50.2%, $light-color), $background;
+  // background-size: contain;
   min-height: 100vh;
   width: 100vw;
   background-attachment: scroll;
- 
+  background-origin: border-box;
+  background-position: 0px 0px;
+  background-repeat: repeat;
+  background-size: 200% 100%;
+  animation: animatedBackground 1s ease-in forwards;
 
-  @media screen and (min-width: 350px) and (orientation: portrait) {
-    background-image: linear-gradient(95deg, $transparent, $transparent 40%, $light-color 40.2%, $light-color), $background;
-  }
 
-  @media screen and (orientation: landscape) {
-    background-image: linear-gradient(95deg, $transparent, $transparent 44.6%, $light-color 44.7%, $light-color), $background;
+  @keyframes animatedBackground {
+    0%{background-position:-10% 0%}
+    // 50%{background-position:97% 100%}
+    100%{background-position:50% 0%}
+  } 
 
-    @media (min-width: 1024px) {
-      background-image: linear-gradient(95deg, $transparent, $transparent 44%, $light-color 44.1%, $light-color), $background;
-    }
+  // @keyframes animatedBackground {
+  //   from { background-position: 0 0; }
+  //   to { background-position: 100% 0; }
+  // } 
 
-    @media (min-width: 1280px) {
-      background-image: linear-gradient(95deg, $transparent, $transparent 44.8%, $light-color 44.9%, $light-color), $background;
-    }
+  // @media screen and (min-width: 350px) and (orientation: portrait) {
+  //   background-image: linear-gradient(95deg, $transparent, $transparent 40%, $light-color 40.2%, $light-color), $background;
+  // }
 
-    @media (min-width: 1440px) {
-      background-image: linear-gradient(95deg, $transparent, $transparent 46.4%, $light-color 46.5%, $light-color), $background;
-    }
-  }
+  // @media screen and (orientation: landscape) {
+  //   background-image: linear-gradient(95deg, $transparent, $transparent 44.6%, $light-color 44.7%, $light-color), $background;
+
+  //   @media (min-width: 1024px) {
+  //     background-image: linear-gradient(95deg, $transparent, $transparent 44%, $light-color 44.1%, $light-color), $background;
+  //   }
+
+  //   @media (min-width: 1280px) {
+  //     background-image: linear-gradient(95deg, $transparent, $transparent 44.8%, $light-color 44.9%, $light-color), $background;
+  //   }
+
+  //   @media (min-width: 1440px) {
+  //     background-image: linear-gradient(95deg, $transparent, $transparent 46.4%, $light-color 46.5%, $light-color), $background;
+  //     // background-position: 200%;
+  //     // animation: 3s ease-in 1s infinite reverse both running swipe-in;
+  //     @keyframes swipe-in {
+  //       0% {
+  //          background-image: linear-gradient(95deg, $transparent, $transparent 46.4%, $light-color 46.5%, $light-color), $background;
+  //       }
+  //       100% {
+  //         background-image: linear-gradient(95deg, $transparent, $transparent 46.4%, $light-color 46.5%, $light-color), $background;
+  //       }
+  //     }
+  //   }
+  // }
 }
 
 .inverse-container {
-  background-image: linear-gradient(95deg, $light-color, $light-color 38%, $transparent 38.2%, $transparent), $background;
+  background-image: linear-gradient(95deg, $light-color, $light-color 50%, $transparent 50.2%, $transparent), $background;
   background-size: contain;
   background-clip: text;
-  -webkit-background-clip: text; /* stylelint-disable-line */
+  -webkit-background-clip: text; 
+  background-origin: border-box;
   min-height: 100vh;
   width: 100vw;
   background-attachment: scroll;
+  background-origin: border-box;
+  background-position: 0px 0px;
+  background-repeat: repeat;
+  background-size: 200% 100%;
+  animation: animatedBackground 1s ease-in forwards;
+
+  @keyframes animatedBackground {
+    0%{background-position:0% 0%}
+    100%{background-position:50% 0%}
+  } 
  
 
 
-  @media screen and (min-width: 350px) and (orientation: portrait) {
-    background-image: linear-gradient(95deg, $light-color, $light-color 40%, $transparent 40.2%, $transparent), $background;
-  }
+  // @media screen and (min-width: 350px) and (orientation: portrait) {
+  //   background-image: linear-gradient(95deg, $light-color, $light-color 40%, $transparent 40.2%, $transparent), $background;
+  // }
 
-  @media screen and (orientation: landscape) {
-    background-image: linear-gradient(95deg, $light-color, $light-color 44.6%, $transparent 44.7%, $transparent), $background;
+  // @media screen and (orientation: landscape) {
+  //   background-image: linear-gradient(95deg, $light-color, $light-color 44.6%, $transparent 44.7%, $transparent), $background;
 
-    @media (min-width: 1024px) {
-      background-image: linear-gradient(95deg, $light-color, $light-color 44%, $transparent 44.1%, $transparent), $background;
-    }
+  //   @media (min-width: 1024px) {
+  //     background-image: linear-gradient(95deg, $light-color, $light-color 44%, $transparent 44.1%, $transparent), $background;
+  //   }
 
-    @media (min-width: 1280px) {
-      background-image: linear-gradient(95deg, $light-color, $light-color 44.8%, $transparent 44.9%, $transparent), $background;
-    }
+  //   @media (min-width: 1280px) {
+  //     background-image: linear-gradient(95deg, $light-color, $light-color 44.8%, $transparent 44.9%, $transparent), $background;
+  //   }
 
-    @media (min-width: 1440px) {
-      background-image: linear-gradient(95deg, $light-color, $light-color 46.4%, $transparent 46.5%, $transparent), $background;
-    }
-  }
+  //   @media (min-width: 1440px) {
+  //     background-image: linear-gradient(95deg, $light-color, $light-color 46.4%, $transparent 46.5%, $transparent), $background;
+  //   }
+  // }
 
   /* LANDING PAGE */
   .name {
@@ -231,26 +269,8 @@ body {
 
 
     h1 {
-
-      // @keyframes slide-in-from-top {
-      //   0% {
-      //     // opacity: 0;
-      //     transform: scaleY(0);
-      //     // color: $light-color;
-      //   }
-
-      //   100% {
-      //     // opacity: 1;
-      //     transform: scaleY(1);
-      //     // color: transparent;
-      //   }
-      // }
-
       font-size: 2.5em;
       font-weight: 1000;
-      // animation: slide-in-from-top 0.5s;
-      // transform-origin: bottom;
-
     }
 
     h2 {
@@ -495,9 +515,11 @@ body {
 
         @media (min-width: 1024px) {
           grid-template-columns: 1fr 1fr;
+          min-height: 902px;
         }
 
         @media (min-width: 1440px) {
+          min-height: 611.31px;
           grid-template-columns: 1fr 1fr 1fr;
           margin: 3em;
           gap: 2em;

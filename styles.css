@@ -6,6 +6,7 @@
   font-family: 'Raleway', 'Work Sans', sans-serif;
   text-align: center;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -125,52 +126,51 @@ body nav:hover {
 
 /* SPLIT BACKGROUND */
 .container {
-  background-image: linear-gradient(95deg, transparent, transparent 38%, #f5f0f6 38.2%, #f5f0f6), url("./images/stars-landscape.jpg");
-  background-size: contain;
+  background-image: linear-gradient(95deg, transparent, transparent 50%, #f5f0f6 50.2%, #f5f0f6), url("./images/stars-landscape.jpg");
   min-height: 100vh;
   width: 100vw;
   background-attachment: scroll;
+  background-origin: border-box;
+  background-position: 0px 0px;
+  background-repeat: repeat;
+  background-size: 200% 100%;
+  -webkit-animation: animatedBackground 1s ease-in forwards;
+          animation: animatedBackground 1s ease-in forwards;
 }
 
-@media screen and (min-width: 350px) and (orientation: portrait) {
-  .container {
-    background-image: linear-gradient(95deg, transparent, transparent 40%, #f5f0f6 40.2%, #f5f0f6), url("./images/stars-landscape.jpg");
+@-webkit-keyframes animatedBackground {
+  0% {
+    background-position: -10% 0%;
+  }
+  100% {
+    background-position: 50% 0%;
   }
 }
 
-@media screen and (orientation: landscape) {
-  .container {
-    background-image: linear-gradient(95deg, transparent, transparent 44.6%, #f5f0f6 44.7%, #f5f0f6), url("./images/stars-landscape.jpg");
+@keyframes animatedBackground {
+  0% {
+    background-position: -10% 0%;
   }
-}
-
-@media screen and (orientation: landscape) and (min-width: 1024px) {
-  .container {
-    background-image: linear-gradient(95deg, transparent, transparent 44%, #f5f0f6 44.1%, #f5f0f6), url("./images/stars-landscape.jpg");
-  }
-}
-
-@media screen and (orientation: landscape) and (min-width: 1280px) {
-  .container {
-    background-image: linear-gradient(95deg, transparent, transparent 44.8%, #f5f0f6 44.9%, #f5f0f6), url("./images/stars-landscape.jpg");
-  }
-}
-
-@media screen and (orientation: landscape) and (min-width: 1440px) {
-  .container {
-    background-image: linear-gradient(95deg, transparent, transparent 46.4%, #f5f0f6 46.5%, #f5f0f6), url("./images/stars-landscape.jpg");
+  100% {
+    background-position: 50% 0%;
   }
 }
 
 .inverse-container {
-  background-image: linear-gradient(95deg, #f5f0f6, #f5f0f6 38%, transparent 38.2%, transparent), url("./images/stars-landscape.jpg");
+  background-image: linear-gradient(95deg, #f5f0f6, #f5f0f6 50%, transparent 50.2%, transparent), url("./images/stars-landscape.jpg");
   background-size: contain;
   background-clip: text;
   -webkit-background-clip: text;
-  /* stylelint-disable-line */
+  background-origin: border-box;
   min-height: 100vh;
   width: 100vw;
   background-attachment: scroll;
+  background-origin: border-box;
+  background-position: 0px 0px;
+  background-repeat: repeat;
+  background-size: 200% 100%;
+  -webkit-animation: animatedBackground 1s ease-in forwards;
+          animation: animatedBackground 1s ease-in forwards;
   /* LANDING PAGE */
   /* BIO */
   /* PORTFOLIO */
@@ -178,33 +178,12 @@ body nav:hover {
   /* CONTACT */
 }
 
-@media screen and (min-width: 350px) and (orientation: portrait) {
-  .inverse-container {
-    background-image: linear-gradient(95deg, #f5f0f6, #f5f0f6 40%, transparent 40.2%, transparent), url("./images/stars-landscape.jpg");
+@keyframes animatedBackground {
+  0% {
+    background-position: 0% 0%;
   }
-}
-
-@media screen and (orientation: landscape) {
-  .inverse-container {
-    background-image: linear-gradient(95deg, #f5f0f6, #f5f0f6 44.6%, transparent 44.7%, transparent), url("./images/stars-landscape.jpg");
-  }
-}
-
-@media screen and (orientation: landscape) and (min-width: 1024px) {
-  .inverse-container {
-    background-image: linear-gradient(95deg, #f5f0f6, #f5f0f6 44%, transparent 44.1%, transparent), url("./images/stars-landscape.jpg");
-  }
-}
-
-@media screen and (orientation: landscape) and (min-width: 1280px) {
-  .inverse-container {
-    background-image: linear-gradient(95deg, #f5f0f6, #f5f0f6 44.8%, transparent 44.9%, transparent), url("./images/stars-landscape.jpg");
-  }
-}
-
-@media screen and (orientation: landscape) and (min-width: 1440px) {
-  .inverse-container {
-    background-image: linear-gradient(95deg, #f5f0f6, #f5f0f6 46.4%, transparent 46.5%, transparent), url("./images/stars-landscape.jpg");
+  100% {
+    background-position: 50% 0%;
   }
 }
 
@@ -568,11 +547,13 @@ body nav:hover {
   .inverse-container #portfolio .grid-container {
     -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
+    min-height: 902px;
   }
 }
 
 @media screen and (orientation: landscape) and (min-width: 1440px) {
   .inverse-container #portfolio .grid-container {
+    min-height: 611.31px;
     -ms-grid-columns: 1fr 1fr 1fr;
         grid-template-columns: 1fr 1fr 1fr;
     margin: 3em;
