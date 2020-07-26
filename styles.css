@@ -126,61 +126,48 @@ body nav:hover {
 
 /* SPLIT BACKGROUND */
 .container {
-  background-image: linear-gradient(95deg, #14141a, #191A1E 50%, #f5f0f6 50.2%, #f5f0f6), url("./images/stars-landscape.jpg");
+  background: linear-gradient(95deg, transparent, transparent 50%, #f5f0f6 50.1%, #f5f0f6), url("./images/stars-landscape.jpg") no-repeat;
+  background-size: 200vw 100%, contain;
   min-height: 100vh;
   width: 100vw;
-  background-attachment: scroll;
-  background-origin: border-box;
-  background-position: 0px 0px;
-  background-repeat: repeat;
-  background-size: 200% 100%;
-  -webkit-animation: animatedBackground 1.5s ease-in 0.2s forwards;
-          animation: animatedBackground 1.5s ease-in 0.2s forwards;
-  -webkit-animation-timing-function: ease-in-out;
-          animation-timing-function: ease-in-out;
+  -webkit-animation: animatedBackground 2s ease-in-out 0s forwards;
+          animation: animatedBackground 2s ease-in-out 0s forwards;
 }
 
 @-webkit-keyframes animatedBackground {
   0% {
-    background-position: 0% 0%;
+    background-position: 0% 0%, 0% 0%;
   }
   80% {
-    background-position: 60% 100%;
+    background-position: 57% 100%, 0%;
   }
   100% {
-    background-position: 55% 0%;
+    background-position: 56% 0%, 0% 0%;
   }
 }
 
 @keyframes animatedBackground {
   0% {
-    background-position: 0% 0%;
+    background-position: 0% 0%, 0% 0%;
   }
   80% {
-    background-position: 60% 100%;
+    background-position: 57% 100%, 0%;
   }
   100% {
-    background-position: 55% 0%;
+    background-position: 56% 0%, 0% 0%;
   }
 }
 
 .inverse-container {
-  background-image: linear-gradient(95deg, #f5f0f6, #f5f0f6 50%, #191A1E 50.2%, #14141a), url("./images/stars-landscape.jpg");
-  background-size: contain;
+  background: linear-gradient(95deg, #f5f0f6, #f5f0f6 50%, transparent 50.1%, transparent), url("./images/stars-landscape.jpg") no-repeat;
+  background-size: 200vw 100%, contain;
   background-clip: text;
   -webkit-background-clip: text;
   background-origin: border-box;
   min-height: 100vh;
   width: 100vw;
-  background-attachment: scroll;
-  background-origin: border-box;
-  background-position: 0px 0px;
-  background-repeat: repeat;
-  background-size: 200% 100%;
-  -webkit-animation: animatedBackground 1.5s ease-in 0.2s forwards;
-          animation: animatedBackground 1.5s ease-in 0.2s forwards;
-  -webkit-animation-timing-function: ease-in-out;
-          animation-timing-function: ease-in-out;
+  -webkit-animation: animatedBackground 2s ease-in-out 0s forwards;
+          animation: animatedBackground 2s ease-in-out 0s forwards;
   /* LANDING PAGE */
   /* BIO */
   /* PORTFOLIO */
@@ -190,13 +177,13 @@ body nav:hover {
 
 @keyframes animatedBackground {
   0% {
-    background-position: 0% 0%;
+    background-position: 0% 0%, 0% 0%;
   }
   80% {
-    background-position: 60% 100%;
+    background-position: 57% 100%, 0% 0%;
   }
   100% {
-    background-position: 55% 0%;
+    background-position: 56% 0%, 0% 0%;
   }
 }
 
