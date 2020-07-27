@@ -1,12 +1,20 @@
-// Make items appears as they scroll into view
-export const animateOnScroll = () => {
+export const animateBackground = () => {
+  const containers = document.querySelectorAll('.container, .inverse-container');
+
+  containers.forEach((container) => {
+      container.classList.add('background-middle')
+  })
+
+
   let elements;
   let windowHeight;
 
   let checkHiddenElements = () => {
-    elements = document.querySelectorAll('.show-on-scroll');
+    elements = document.querySelectorAll('#bio');
     windowHeight = window.innerHeight;
   };
+
+
 
   function checkPosition() {
     for (let i = 0; i < elements.length; i++) {
@@ -14,12 +22,13 @@ export const animateOnScroll = () => {
       let positionFromTop = elements[i].getBoundingClientRect().top;
 
       if (positionFromTop - windowHeight <= 0) {
-        element.classList.add('is-visible');
-        element.classList.remove('hidden');
+        containers[0].classList.add('background-left');
+        containers[1].classList.add('background-left');
+
       } 
       if (positionFromTop - windowHeight >= 0) {
-        element.classList.remove('fade-in');
-        element.classList.add('hidden');
+          containers[0].classList.remove('background-left');
+          containers[1].classList.remove('background-left');
       }
     }
   }
@@ -29,7 +38,4 @@ export const animateOnScroll = () => {
 
   checkHiddenElements();
   checkPosition();
-};  
-
-
-  export default animateOnScroll;
+};

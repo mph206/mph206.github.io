@@ -1,5 +1,7 @@
 import { projects } from './projects.js';
 import animateOnScroll from './animateOnScroll.js';
+import {animateBackground} from './animateBackground.js';
+
 
 // Render projects
 const projectsMap = (element) => {
@@ -54,5 +56,6 @@ modal.addEventListener('click', () => {
   }
 });
 
+animateBackground();
 animateOnScroll();
-var rellax = new Rellax('.rellax');
+// var rellax = new Rellax('.rellax');
