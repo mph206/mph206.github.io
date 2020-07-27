@@ -8,14 +8,14 @@ const projectsMap = (element) => {
   document.querySelector(element).innerHTML = projects.map((project, index) => {
     return `<article id="project-${index}" class="show-on-scroll hidden">
         <img src=${project.img} alt=${project.name}>
-          <span class="skills">
-            ${project.icons.map(icon => `<i class="${icon} float-icons"></i>`)}
-          </span>
+        <div class='project-links'>
           <a href=${project.pageLink} target='_blank'><i class="fas fa-rocket float-icons"></i></a>
           <a href=${project.gitLink} target='_blank'><i class="fas fa-code float-icons"></i></a>
+        </div>
         <div class="project-text">  
           <h3>${project.name}</h3>
           <p>${project.description}</p>
+          <p>${project.skills}</p>
         </div>
         </article>`
   }).join('');

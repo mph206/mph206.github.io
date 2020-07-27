@@ -389,84 +389,67 @@ body nav:hover {
 
 .inverse-container #portfolio article {
   position: relative;
+  overflow-y: hidden;
 }
 
 .inverse-container #portfolio article img {
   width: 100%;
   height: auto;
-  -webkit-transition-duration: 0.3s;
-          transition-duration: 0.3s;
-}
-
-.inverse-container #portfolio article .float-icons {
-  color: white;
-  position: absolute;
-  bottom: 50%;
-  -webkit-transform: translate(50%, 50%);
-          transform: translate(50%, 50%);
-  z-index: 2;
-  -webkit-transition-duration: 0.2s;
-          transition-duration: 0.2s;
 }
 
 .inverse-container #portfolio article .project-text {
   position: absolute;
   height: 2em;
-  bottom: 0;
+  top: 0;
   width: 100%;
   -webkit-transition-duration: 0.2s;
           transition-duration: 0.2s;
   overflow-y: hidden;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.9);
 }
 
 .inverse-container #portfolio article .project-text h3 {
   height: 2em;
-  padding-top: 0.5em;
   z-index: 2;
+  font-size: 1.4em;
 }
 
-.inverse-container #portfolio article .skills i {
-  font-size: 1.5em;
-  left: -2em;
-}
-
-.inverse-container #portfolio article:hover i:nth-child(1) {
+.inverse-container #portfolio article .project-links {
+  position: absolute;
+  width: 100%;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 2;
+  overflow-y: hidden;
+  bottom: -3em;
   left: 0;
 }
 
-.inverse-container #portfolio article:hover i:nth-child(2) {
-  left: 1em;
-}
-
-.inverse-container #portfolio article:hover i:nth-child(3) {
-  left: 2em;
-}
-
-.inverse-container #portfolio article:hover i:nth-child(4) {
-  left: 3em;
-}
-
-.inverse-container #portfolio article:hover i:nth-child(5) {
-  left: 4em;
-}
-
-.inverse-container #portfolio article .fa-rocket,
-.inverse-container #portfolio article .fa-code {
+.inverse-container #portfolio article .project-links .float-icons {
+  color: white;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
   font-size: 2em;
-  right: -1em;
 }
 
-.inverse-container #portfolio article:hover .fa-rocket {
-  right: 1em;
+.inverse-container #portfolio article:hover .project-links {
+  height: 30%;
+  bottom: 0;
 }
 
-.inverse-container #portfolio article:hover .fa-code {
-  right: 3em;
-}
-
-.inverse-container #portfolio article:hover div {
-  height: 50%;
+.inverse-container #portfolio article:hover .project-text {
+  padding-top: 2em;
+  height: 70%;
 }
 
 .inverse-container #skills ul {
