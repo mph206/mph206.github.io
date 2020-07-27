@@ -126,8 +126,9 @@ body nav:hover {
 
 /* SPLIT BACKGROUND */
 .container {
-  background: linear-gradient(95deg, transparent, transparent 50%, #f5f0f6 50.1%, #f5f0f6), url("./images/stars-landscape.jpg") no-repeat;
-  background-size: 200vw 100%, contain;
+  background: linear-gradient(95deg, transparent, transparent 52.5%, #f5f0f6 52.6%, #f5f0f6), url("./images/stars-landscape.jpg");
+  background-size: 200% 100%, contain;
+  background-attachment: fixed;
   min-height: 100vh;
   width: 100vw;
   -webkit-animation: animatedBackground 2s ease-in-out 0s forwards;
@@ -158,9 +159,28 @@ body nav:hover {
   }
 }
 
+@-webkit-keyframes wipe-out-on-scroll {
+  0% {
+    background-position: 56% 0%, 0% 0%;
+  }
+  100% {
+    background-position: 100%, 0% 0%;
+  }
+}
+
+@keyframes wipe-out-on-scroll {
+  0% {
+    background-position: 56% 0%, 0% 0%;
+  }
+  100% {
+    background-position: 100%, 0% 0%;
+  }
+}
+
 .inverse-container {
-  background: linear-gradient(95deg, #f5f0f6, #f5f0f6 50%, transparent 50.1%, transparent), url("./images/stars-landscape.jpg") no-repeat;
-  background-size: 200vw 100%, contain;
+  background: linear-gradient(95deg, #f5f0f6, #f5f0f6 52.5%, transparent 52.6%, transparent), url("./images/stars-landscape.jpg");
+  background-size: 200% 100%, contain;
+  background-attachment: fixed;
   background-clip: text;
   -webkit-background-clip: text;
   background-origin: border-box;
@@ -294,7 +314,7 @@ body nav:hover {
       -ms-flex-pack: center;
           justify-content: center;
   height: 100vh;
-  padding: 2em 2em 3em 37vw;
+  border: 2em 2em 3em 37vw;
   color: white;
   -webkit-transform: skewX(-5deg);
           transform: skewX(-5deg);
@@ -770,41 +790,44 @@ body nav:hover {
   margin-top: 5%;
 }
 
-@-webkit-keyframes fade-in {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateX(100vw);
-            transform: translateX(100vw);
-  }
-  100% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateX(100vw);
-            transform: translateX(100vw);
-  }
-  100% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-.fade-in {
-  -webkit-animation: fade-in 0.4s;
-          animation: fade-in 0.4s;
-}
-
 .hidden {
   opacity: 0;
   -webkit-transform: translateX(-100vw);
           transform: translateX(-100vw);
+}
+
+@-webkit-keyframes show-element {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(100vw);
+            transform: translateX(100vw);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes show-element {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(100vw);
+            transform: translateX(100vw);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.is-visible {
+  -webkit-animation: show-element 0.4s;
+          animation: show-element 0.4s;
+  opacity: 1;
+  -webkit-transition-duration: 1s;
+          transition-duration: 1s;
 }
 
 /* Animate email modal */

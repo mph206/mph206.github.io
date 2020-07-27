@@ -19,7 +19,7 @@ export const projects = [
         description: 'A twist on the arcade classic, where players must type the words before they hit the bottom of the screen. Built using vanilla Javascript during week 4 of the _nology course.',
         img: "./images/keyboard-invaders.png",
         icons: [],
-        pageLink: '.Keyboard-invaders', // https://www.martinharrison.dev/Keyboard-invaders/
+        pageLink: './Keyboard-invaders', // https://www.martinharrison.dev/Keyboard-invaders/
         gitLink: 'https://github.com/mph206/Keyboard-invaders',
     },{
         name: "Morse Code Translator",

@@ -119,8 +119,9 @@ body {
 /* SPLIT BACKGROUND */
 
 .container {
-  background: linear-gradient(95deg, transparent, transparent 50%, $light-color 50.1%, $light-color), $background no-repeat;
-  background-size: 200vw 100%, contain;
+  background: linear-gradient(95deg, transparent, transparent 52.5%, $light-color 52.6%, $light-color), $background;
+  background-size: 200% 100%, contain;
+  background-attachment: fixed;
   min-height: 100vh;
   width: 100vw;
   animation: animatedBackground 2s ease-in-out 0s forwards;
@@ -131,40 +132,22 @@ body {
     100%{background-position:56% 0%, 0% 0%}
   } 
 
-  // @media screen and (min-width: 350px) and (orientation: portrait) {
-  //   background-image: linear-gradient(95deg, $transparent, $transparent 40%, $light-color 40.2%, $light-color), $background;
+  @keyframes wipe-out-on-scroll {
+    0%{background-position:56% 0%, 0% 0%}
+    100%{background-position: 100%, 0% 0%}
+  }
+
+  // .animate-out {
+  //   animation: wipe-out-on-scroll 2s ease-in-out;
   // }
 
-  // @media screen and (orientation: landscape) {
-  //   background-image: linear-gradient(95deg, $transparent, $transparent 44.6%, $light-color 44.7%, $light-color), $background;
-
-  //   @media (min-width: 1024px) {
-  //     background-image: linear-gradient(95deg, $transparent, $transparent 44%, $light-color 44.1%, $light-color), $background;
-  //   }
-
-  //   @media (min-width: 1280px) {
-  //     background-image: linear-gradient(95deg, $transparent, $transparent 44.8%, $light-color 44.9%, $light-color), $background;
-  //   }
-
-  //   @media (min-width: 1440px) {
-  //     background-image: linear-gradient(95deg, $transparent, $transparent 46.4%, $light-color 46.5%, $light-color), $background;
-  //     // background-position: 200%;
-  //     // animation: 3s ease-in 1s infinite reverse both running swipe-in;
-  //     @keyframes swipe-in {
-  //       0% {
-  //          background-image: linear-gradient(95deg, $transparent, $transparent 46.4%, $light-color 46.5%, $light-color), $background;
-  //       }
-  //       100% {
-  //         background-image: linear-gradient(95deg, $transparent, $transparent 46.4%, $light-color 46.5%, $light-color), $background;
-  //       }
-  //     }
-  //   }
-  // }
 }
 
 .inverse-container {
-  background: linear-gradient(95deg, $light-color, $light-color 50%, transparent 50.1%, transparent), $background no-repeat;
-  background-size: 200vw 100%, contain;
+  background: linear-gradient(95deg, $light-color, $light-color 52.5%, transparent 52.6%, transparent), $background;
+  background-size: 200% 100%, contain;
+  background-attachment: fixed;
+
   background-clip: text;
   -webkit-background-clip: text; 
   background-origin: border-box;
@@ -177,28 +160,6 @@ body {
     80%{background-position:57% 100%, 0% 0%}
     100%{background-position:56% 0%, 0% 0%}
   } 
- 
-
-
-  // @media screen and (min-width: 350px) and (orientation: portrait) {
-  //   background-image: linear-gradient(95deg, $light-color, $light-color 40%, $transparent 40.2%, $transparent), $background;
-  // }
-
-  // @media screen and (orientation: landscape) {
-  //   background-image: linear-gradient(95deg, $light-color, $light-color 44.6%, $transparent 44.7%, $transparent), $background;
-
-  //   @media (min-width: 1024px) {
-  //     background-image: linear-gradient(95deg, $light-color, $light-color 44%, $transparent 44.1%, $transparent), $background;
-  //   }
-
-  //   @media (min-width: 1280px) {
-  //     background-image: linear-gradient(95deg, $light-color, $light-color 44.8%, $transparent 44.9%, $transparent), $background;
-  //   }
-
-  //   @media (min-width: 1440px) {
-  //     background-image: linear-gradient(95deg, $light-color, $light-color 46.4%, $transparent 46.5%, $transparent), $background;
-  //   }
-  // }
 
   /* LANDING PAGE */
   .name {
@@ -294,9 +255,10 @@ body {
     flex-direction: column;
     justify-content: center;
     height: 100vh;
-    padding: 2em 2em 3em 37vw;
+    border: 2em 2em 3em 37vw;
     color: white;
     transform: skewX(-5deg);
+    
 
     @media screen and (orientation: portrait) {
 
@@ -708,7 +670,12 @@ body {
 }
 
 // SCROLL ANIMATIONS
-@keyframes fade-in {
+.hidden {
+  opacity: 0;
+  transform: translateX(-100vw);
+}
+
+@keyframes show-element {
   0% {
     opacity: 0;
     transform: translateX(100vw);
@@ -720,13 +687,11 @@ body {
   }
 }
 
-.fade-in {
-  animation: fade-in 0.4s;
-}
-
-.hidden {
-  opacity: 0;
-  transform: translateX(-100vw);
+.is-visible {
+  animation: show-element 0.4s;
+  // will-change: translate;
+  opacity: 1;
+  transition-duration: 1s;
 }
 
 

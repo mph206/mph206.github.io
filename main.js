@@ -1,9 +1,10 @@
-import { projects } from './projects.js'
+import { projects } from './projects.js';
+import animateOnScroll from './animateOnScroll.js';
 
 // Render projects
 const projectsMap = (element) => {
   document.querySelector(element).innerHTML = projects.map((project, index) => {
-    return `<article id="project-${index}" class="hidden">
+    return `<article id="project-${index}" class="show-on-scroll hidden">
         <img src=${project.img} alt=${project.name}>
           <span class="skills">
             ${project.icons.map(icon => `<i class="${icon} float-icons"></i>`)}
@@ -18,40 +19,6 @@ const projectsMap = (element) => {
   }).join('');
 } 
 projectsMap('.grid-container')
-
-// Make items appears as they scroll into view
-const animateOnScroll = () => {
-  let elements;
-  let windowHeight;
-
-  let checkHiddenElements = () => {
-    elements = document.querySelectorAll('.hidden');
-    windowHeight = window.innerHeight;
-  };
-
-  function checkPosition() {
-    for (let i = 0; i < elements.length; i++) {
-      let element = elements[i];
-      let positionFromTop = elements[i].getBoundingClientRect().top;
-
-      if (positionFromTop - windowHeight <= 0) {
-        element.classList.add('fade-in');
-        element.classList.remove('hidden');
-      } 
-      if (positionFromTop - windowHeight >= 0) {
-        element.classList.remove('fade-in');
-        element.classList.add('hidden');
-      }
-    }
-  }
-
-  window.addEventListener('scroll', checkPosition);
-  window.addEventListener('resize', checkHiddenElements);
-
-  checkHiddenElements();
-  checkPosition();
-};
-animateOnScroll();
 
 // ANIMATE EMAIL MODAL
 
@@ -87,3 +54,5 @@ modal.addEventListener('click', () => {
   }
 });
 
+animateOnScroll();
+var rellax = new Rellax('.rellax');
