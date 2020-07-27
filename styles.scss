@@ -1,7 +1,6 @@
 $dark-color: #1c3041;
 $light-color: #f5f0f6;
 $background: url("./images/stars-landscape.jpg");
-// $background: #1c3041;
 $transparent: transparent;
 
 
@@ -12,6 +11,7 @@ $transparent: transparent;
   font-family: 'Raleway', 'Work Sans', sans-serif;
   text-align: center;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -119,64 +119,24 @@ body {
 /* SPLIT BACKGROUND */
 
 .container {
-  background-image: linear-gradient(95deg, $transparent, $transparent 38%, $light-color 38.2%, $light-color), $background;
-  background-size: contain;
+  background: linear-gradient(95deg, transparent, transparent 52.5%, $light-color 52.6%, $light-color), $background;
+  background-size: 200% 100%, cover;
+  background-attachment: fixed;
   min-height: 100vh;
   width: 100vw;
-  background-attachment: scroll;
- 
-
-  @media screen and (min-width: 350px) and (orientation: portrait) {
-    background-image: linear-gradient(95deg, $transparent, $transparent 40%, $light-color 40.2%, $light-color), $background;
-  }
-
-  @media screen and (orientation: landscape) {
-    background-image: linear-gradient(95deg, $transparent, $transparent 44.6%, $light-color 44.7%, $light-color), $background;
-
-    @media (min-width: 1024px) {
-      background-image: linear-gradient(95deg, $transparent, $transparent 44%, $light-color 44.1%, $light-color), $background;
-    }
-
-    @media (min-width: 1280px) {
-      background-image: linear-gradient(95deg, $transparent, $transparent 44.8%, $light-color 44.9%, $light-color), $background;
-    }
-
-    @media (min-width: 1440px) {
-      background-image: linear-gradient(95deg, $transparent, $transparent 46.4%, $light-color 46.5%, $light-color), $background;
-    }
-  }
+  transition: background-position 1.5s ease-out;
 }
 
 .inverse-container {
-  background-image: linear-gradient(95deg, $light-color, $light-color 38%, $transparent 38.2%, $transparent), $background;
-  background-size: contain;
+  background: linear-gradient(95deg, $light-color, $light-color 52.5%, transparent 52.6%, transparent), $background;
+  background-size: 200% 100%, cover;
+  background-attachment: fixed;
   background-clip: text;
-  -webkit-background-clip: text; /* stylelint-disable-line */
+  -webkit-background-clip: text; 
+  background-origin: border-box;
   min-height: 100vh;
   width: 100vw;
-  background-attachment: scroll;
- 
-
-
-  @media screen and (min-width: 350px) and (orientation: portrait) {
-    background-image: linear-gradient(95deg, $light-color, $light-color 40%, $transparent 40.2%, $transparent), $background;
-  }
-
-  @media screen and (orientation: landscape) {
-    background-image: linear-gradient(95deg, $light-color, $light-color 44.6%, $transparent 44.7%, $transparent), $background;
-
-    @media (min-width: 1024px) {
-      background-image: linear-gradient(95deg, $light-color, $light-color 44%, $transparent 44.1%, $transparent), $background;
-    }
-
-    @media (min-width: 1280px) {
-      background-image: linear-gradient(95deg, $light-color, $light-color 44.8%, $transparent 44.9%, $transparent), $background;
-    }
-
-    @media (min-width: 1440px) {
-      background-image: linear-gradient(95deg, $light-color, $light-color 46.4%, $transparent 46.5%, $transparent), $background;
-    }
-  }
+  transition: background-position 1.5s ease-out;
 
   /* LANDING PAGE */
   .name {
@@ -196,8 +156,7 @@ body {
     // }
 
 
-    @media screen and (orientation: portrait) {
-      @media (min-width: 400px) {
+    @media (min-width: 400px) {
         font-size: 1.1em;
       }
 
@@ -212,52 +171,19 @@ body {
       @media (min-width: 900px) {
         font-size: 1.8em;
       }
-    }
-
-    @media screen and (orientation: landscape) {
-      @media (min-width: 1024px) {
-        font-size: 1.2em;
-      }
-
-      @media (min-width: 1440px) {
-        font-size: 1.6em;
-      }
 
       @media (min-width: 2560px) {
         font-size: 2.1em;
       }
 
-    }
-
-
     h1 {
-
-      // @keyframes slide-in-from-top {
-      //   0% {
-      //     // opacity: 0;
-      //     transform: scaleY(0);
-      //     // color: $light-color;
-      //   }
-
-      //   100% {
-      //     // opacity: 1;
-      //     transform: scaleY(1);
-      //     // color: transparent;
-      //   }
-      // }
-
       font-size: 2.5em;
       font-weight: 1000;
-      // animation: slide-in-from-top 0.5s;
-      // transform-origin: bottom;
-
     }
 
     h2 {
       font-size: 2em;
       font-weight: 100;
-      transition-duration: 0.6s;
-
     }
 
     #cta-btn {
@@ -273,7 +199,6 @@ body {
       transition-duration: 0.6s;
       color: inherit;
 
-
       &:hover {
         letter-spacing: 0.5em;
       }
@@ -288,179 +213,47 @@ body {
   #bio {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     height: 100vh;
-    padding: 2em 2em 3em 37vw;
+    padding: 10% 3em 30%;
     color: white;
     transform: skewX(-5deg);
 
-    @media screen and (orientation: portrait) {
-
-      @media (min-width: 350px) {
-        padding-left: 40vw;
-      }
-
-      @media (min-width: 600px) {
-        padding-left: 42vw;
-      }
-
-      @media (min-width: 720px) {
-        padding-right: 5em;
-      }
-
-      @media (min-width: 900px) {
-        padding-right: 7em;
-      }
-    }
-
-    @media screen and (orientation: landscape) {
-
-      padding-left: 50vw;
-      padding-right: 5em;
-
-      @media (min-width: 960px) {
-        padding-left: 46vw;
-      }
-
-      @media (min-width: 1024px) {
-        padding-left: 44vw;
-      }
-
-      @media (min-width: 1280px) {
-        padding-left: 46vw;
-      }
-    }
+    @media (min-width: 600px) {padding: 10% 4em 30%;}
+    @media (min-width: 900px) {padding: 10% 6em 30%;}
+    @media (min-width: 2560px) {padding: 10% 10em 30%;}
 
     h2,
     p {
-      text-align: justify;
+      text-align: center;
       line-height: 2em;
       color: $dark-color;
-      /* color: transparent; -- need to fix this */
     }
 
     h2 {
-      @media screen and (min-width: 1440px) {
-        font-size: 2em;
-      }
-
-      @media screen and (orientation: landscape) and (min-width: 2560px) {
-        font-size: 2.5em;
-      }
+      @media (min-width: 400px) {font-size: 1.1em;}
+      @media (min-width: 600px) {font-size: 1.5em;}
+      @media (min-width: 1440px) {font-size: 2em;}
+      @media (min-width: 2560px) {font-size: 2.5em;}
     }
 
     p {
-      font-size: 0.8em;
+      font-size: 1em;
       font-weight: 500;
-
-      @media screen and (orientation: portrait) {
-
-        @media (min-width: 350px) {
-          font-size: 1em;
-        }
-
-        @media (min-width: 450px) {
-          font-size: 1.2em;
-        }
-
-        @media (min-width: 600px) {
-          font-size: 1.3em;
-        }
-
-        @media (min-width: 900px) {
-          font-size: 1.5em;
-        }
-
-      }
-
-      @media screen and (orientation: landscape) {
-
-        @media (min-width: 1024px) {
-          font-size: 0.9em;
-          padding-right: 7em;
-        }
-
-        @media (min-width: 1280px) {
-          font-size: 1em;
-          padding-right: 9em;
-        }
-
-        @media (min-width: 1440px) {
-          font-size: 1em;
-          padding-right: 16em;
-        }
-
-        @media (min-width: 2560px) {
-          font-size: 1.4em;
-          padding-right: 25em;
-
-        }
-      }
-
+      @media (min-width: 600px) {font-size: 1.1em;}
     }
   }
 
   /* PORTFOLIO */
   #portfolio {
     h2 {
-      text-align: left;
+      text-align: center;
       width: 100%;
       text-transform: uppercase;
       color: transparent;
-      padding-left: 28vw;
       color: $dark-color;
       transform: skewX(-5deg);
-
-      @media screen and (orientation: portrait) {
-
-        @media (min-width: 350px) {
-          padding-left: 31vw;
-        }
-
-        @media (min-width: 400px) {
-          padding-left: 31vw;
-        }
-
-        @media (min-width: 480px) {
-          padding-left: 29vw;
-        }
-
-        @media (min-width: 600px) {
-          padding-left: 34vw;
-        }
-
-        @media (min-width: 900px) {
-          font-size: 2em;
-        }
-      }
-
-      @media screen and (orientation: landscape) {
-
-        padding-left: 47vw;
-
-        @media (min-width: 960px) {
-          padding-left: 43vw;
-        }
-
-        @media (min-width: 1024px) {
-          padding-left: 40.5vw;
-        }
-
-        @media (min-width: 1280px) {
-          padding-left: 43vw;
-        }
-
-        @media (min-width: 1440px) {
-          padding-left: 43.5vw;
-          font-size: 2em;
-        }
-
-        @media (min-width: 2560px) {
-          padding-left: 44vw;
-          font-size: 2.5em;
-        }
-      }
-
+      @media (min-width: 900px) {font-size: 2em;}
+      @media (min-width: 2560px) {font-size: 2.5em;}
     }
 
     .grid-container {
@@ -495,9 +288,11 @@ body {
 
         @media (min-width: 1024px) {
           grid-template-columns: 1fr 1fr;
+          min-height: 902px;
         }
 
         @media (min-width: 1440px) {
+          min-height: 611.31px;
           grid-template-columns: 1fr 1fr 1fr;
           margin: 3em;
           gap: 2em;
@@ -507,80 +302,60 @@ body {
 
     article {
       position: relative;
+      overflow-y: hidden;
 
       img {
         width: 100%;
         height: auto;
-        transition-duration: 0.3s;
-      }
-
-      .float-icons {
-        color: white;
-        position: absolute;
-        bottom: 50%;
-        transform: translate(50%, 50%);
-        z-index: 2;
-        transition-duration: 0.2s;
       }
 
       .project-text {
         position: absolute;
         height: 2em;
-        bottom: 0;
+        top: 0;
         width: 100%;
         transition-duration: 0.2s;
         overflow-y: hidden;
-        background-color: rgba(0, 0, 0, 0.5);
+        background-color: rgba(0, 0, 0, 0.9);
 
         h3 {
           height: 2em;
-          padding-top: 0.5em;
+          // padding-top: 0.5em;
           z-index: 2;
+          font-size: 1.4em;
         }
       }
 
-      .skills i {
-        font-size: 1.5em;
-        left: -2em;
-      }
-
-      &:hover i:nth-child(1) {
+      .project-links {
+        position: absolute;
+        width: 100%;
+        transition-duration: 0.2s;
+        background-color: rgba(0, 0, 0, 0.9);
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        z-index: 2;
+        overflow-y: hidden;
+        bottom: -3em;
         left: 0;
+
+        .float-icons {
+          color: white;
+          transition-duration: 0.2s;
+          font-size: 2em; 
+        }
       }
 
-      &:hover i:nth-child(2) {
-        left: 1em;
+      &:hover .project-links {
+        height: 30%;
+        bottom: 0;
       }
 
-      &:hover i:nth-child(3) {
-        left: 2em;
+      &:hover .project-text {
+        padding-top: 2em;
+        height: 70%;
       }
-
-      &:hover i:nth-child(4) {
-        left: 3em;
-      }
-
-      &:hover i:nth-child(5) {
-        left: 4em;
-      }
-
-      .fa-rocket,
-      .fa-code {
-        font-size: 2em;
-        right: -1em;
-      }
-
-      &:hover .fa-rocket {
-        right: 1em;
-      }
-
-      &:hover .fa-code {
-        right: 3em;
-      }
-
-      &:hover div {
-        height: 50%;
-      }
+      
     }
   }
   /* SKILLS */
@@ -589,7 +364,6 @@ body {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-
 
       li {
         display: flex;
@@ -612,7 +386,6 @@ body {
 
         i, img {
           padding-right: 10px;
-
         }
       }
     }
@@ -702,7 +475,12 @@ body {
 }
 
 // SCROLL ANIMATIONS
-@keyframes fade-in {
+.hidden {
+  opacity: 0;
+  transform: translateX(-100vw);
+}
+
+@keyframes show-element {
   0% {
     opacity: 0;
     transform: translateX(100vw);
@@ -714,13 +492,11 @@ body {
   }
 }
 
-.fade-in {
-  animation: fade-in 0.4s;
-}
-
-.hidden {
-  opacity: 0;
-  transform: translateX(-100vw);
+.is-visible {
+  animation: show-element 0.4s;
+  // will-change: translate;
+  opacity: 1;
+  transition-duration: 1s;
 }
 
 
@@ -761,4 +537,12 @@ body {
   animation-name: slide-back;
   animation-duration: 0.3s;
   animation-fill-mode: both;
+}
+
+.background-middle {
+  background-position: 56% 0%, 0% 0%;
+}
+
+.background-left {
+  background-position: 100% 0%, 0% 0%;
 }

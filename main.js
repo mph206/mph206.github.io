@@ -1,36 +1,26 @@
-// Make items appears as they scroll into view
-const animateOnScroll = () => {
-  let elements;
-  let windowHeight;
+import { projects } from './projects.js';
+import animateOnScroll from './animateOnScroll.js';
+import {animateBackground} from './animateBackground.js';
 
-  let checkHiddenElements = () => {
-    elements = document.querySelectorAll('.hidden');
-    windowHeight = window.innerHeight;
-  };
 
-  function checkPosition() {
-    for (let i = 0; i < elements.length; i++) {
-      let element = elements[i];
-      let positionFromTop = elements[i].getBoundingClientRect().top;
-
-      if (positionFromTop - windowHeight <= 0) {
-        element.classList.add('fade-in');
-        element.classList.remove('hidden');
-      } 
-      if (positionFromTop - windowHeight >= 0) {
-        element.classList.remove('fade-in');
-        element.classList.add('hidden');
-      }
-    }
-  }
-
-  window.addEventListener('scroll', checkPosition);
-  window.addEventListener('resize', checkHiddenElements);
-
-  checkHiddenElements();
-  checkPosition();
-};
-animateOnScroll();
+// Render projects
+const projectsMap = (element) => {
+  document.querySelector(element).innerHTML = projects.map((project, index) => {
+    return `<article id="project-${index}" class="show-on-scroll hidden">
+        <img src=${project.img} alt=${project.name}>
+        <div class='project-links'>
+          <a href=${project.pageLink} target='_blank'><i class="fas fa-rocket float-icons"></i></a>
+          <a href=${project.gitLink} target='_blank'><i class="fas fa-code float-icons"></i></a>
+        </div>
+        <div class="project-text">  
+          <h3>${project.name}</h3>
+          <p>${project.description}</p>
+          <p>${project.skills}</p>
+        </div>
+        </article>`
+  }).join('');
+} 
+projectsMap('.grid-container')
 
 // ANIMATE EMAIL MODAL
 
@@ -65,3 +55,7 @@ modal.addEventListener('click', () => {
     hideModal();
   }
 });
+
+animateBackground();
+animateOnScroll();
+// var rellax = new Rellax('.rellax');
