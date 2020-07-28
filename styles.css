@@ -3,7 +3,7 @@
           box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Raleway', 'Work Sans', sans-serif;
+  font-family: Arial, 'Raleway', 'Work Sans', sans-serif;
   text-align: center;
   overflow-x: hidden;
   scroll-behavior: smooth;
@@ -14,7 +14,7 @@ body {
 }
 
 body a {
-  color: #1c3041;
+  color: #000000;
   text-decoration: none;
 }
 
@@ -24,7 +24,7 @@ body .uppercase {
 
 body .fa-bars,
 body .fa-arrow-right {
-  color: #1c3041;
+  color: #000000;
   position: fixed;
   top: 0;
   right: 0;
@@ -102,7 +102,7 @@ body nav ul li {
 body nav a {
   display: block;
   padding: 1em 0.5em;
-  color: #1c3041;
+  color: #000000;
   text-align: right;
   border: 1px solid #f5f0f6;
 }
@@ -111,14 +111,14 @@ body nav a:hover {
   font-weight: bold;
   -webkit-transition-duration: 0.2s;
           transition-duration: 0.2s;
-  border-top: 1px solid #1c3041;
-  border-bottom: 1px solid #1c3041;
+  border-top: 1px solid #000000;
+  border-bottom: 1px solid #000000;
 }
 
 body .fa-bars:hover ~ nav,
 body nav:hover {
   opacity: 1;
-  height: 13.15em;
+  height: 203px;
   width: 6.5em;
   -webkit-transition-duration: 0.2s;
           transition-duration: 0.2s;
@@ -138,6 +138,16 @@ body nav:hover {
 .inverse-container {
   background: linear-gradient(95deg, #f5f0f6, #f5f0f6 52.5%, transparent 52.6%, transparent), url("./images/stars-landscape.jpg");
   background-size: 200% 100%, cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-attachment: fixed;
   background-clip: text;
   -webkit-background-clip: text;
@@ -149,7 +159,6 @@ body nav:hover {
   /* LANDING PAGE */
   /* BIO */
   /* PORTFOLIO */
-  /* SKILLS */
   /* CONTACT */
 }
 
@@ -204,12 +213,16 @@ body nav:hover {
 .inverse-container .name h1 {
   font-size: 2.5em;
   font-weight: 1000;
+  font-family: 'Raleway', 'Work Sans', sans-serif;
 }
 
 .inverse-container .name h2 {
   font-size: 2em;
-  font-weight: 100;
+  font-weight: 400;
   color: transparent;
+  background-color: transparent;
+  display: block;
+  font-family: 'Raleway', 'Work Sans', sans-serif;
 }
 
 .inverse-container .name #cta-btn {
@@ -225,6 +238,8 @@ body nav:hover {
   -webkit-transition-duration: 0.6s;
           transition-duration: 0.6s;
   color: inherit;
+  background-clip: border-box;
+  background-color: transparent;
 }
 
 .inverse-container .name #cta-btn:hover {
@@ -237,10 +252,12 @@ body nav:hover {
 
 .inverse-container h2 {
   text-align: center;
-  line-height: 2em;
-  color: #1c3041;
+  color: #000000;
+  margin-bottom: 10px;
   width: 100%;
   text-transform: uppercase;
+  background-color: #f5f0f6;
+  display: inline;
 }
 
 @media (min-width: 400px) {
@@ -275,35 +292,34 @@ body nav:hover {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  height: 100vh;
-  padding: 10% 3em 30%;
-  color: white;
-  -webkit-transform: skewX(-5deg);
-          transform: skewX(-5deg);
+  padding: 10% 3em 1em;
+  color: #000000;
+  min-height: 100vh;
 }
 
 @media (min-width: 600px) {
   .inverse-container #bio {
-    padding: 10% 4em 30%;
+    padding: 10% 4em 1em;
   }
 }
 
 @media (min-width: 900px) {
   .inverse-container #bio {
-    padding: 10% 6em 30%;
+    padding: 10% 6em 1em;
   }
 }
 
 @media (min-width: 2560px) {
   .inverse-container #bio {
-    padding: 10% 10em 30%;
+    padding: 10% 10em 1em;
   }
 }
 
 .inverse-container #bio p {
   text-align: center;
-  line-height: 2em;
-  color: #1c3041;
+  line-height: 1.5em;
+  color: #000000;
+  background-color: #f5f0f6;
 }
 
 .inverse-container #bio p {
@@ -315,6 +331,57 @@ body nav:hover {
   .inverse-container #bio p {
     font-size: 1.1em;
   }
+}
+
+.inverse-container #skills {
+  padding-bottom: 50px;
+}
+
+.inverse-container #skills ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.inverse-container #skills ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  padding: 5px 10px;
+  margin: 5px;
+  border-radius: 2px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (min-width: 500px) {
+  .inverse-container #skills ul li {
+    margin: 10px;
+  }
+}
+
+.inverse-container #skills ul li i,
+.inverse-container #skills ul li p {
+  display: inline;
+  font-size: inherit;
+}
+
+.inverse-container #skills ul li img {
+  height: 24px;
+}
+
+.inverse-container #skills ul li i, .inverse-container #skills ul li img {
+  padding-right: 5px;
 }
 
 .inverse-container #portfolio .grid-container {
@@ -468,50 +535,8 @@ body nav:hover {
   display: none;
 }
 
-.inverse-container #skills ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.inverse-container #skills ul li {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: row-reverse;
-          flex-direction: row-reverse;
-  padding: 5px 10px;
-  margin: 10px;
-  border-radius: 2px;
-  background-color: rgba(255, 255, 255, 0.9);
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.inverse-container #skills ul li i,
-.inverse-container #skills ul li p {
-  display: inline;
-  font-size: 1.5em;
-}
-
-.inverse-container #skills ul li img {
-  height: 24px;
-}
-
-.inverse-container #skills ul li i, .inverse-container #skills ul li img {
-  padding-right: 10px;
-}
-
 .inverse-container footer {
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: transparent;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -519,6 +544,8 @@ body nav:hover {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -526,11 +553,17 @@ body nav:hover {
       -ms-flex-align: center;
           align-items: center;
   margin-top: 50px;
+  width: 90%;
+  color: #000000;
+  border-top: 1px solid #000000;
+  text-align: center;
 }
 
 .inverse-container footer h2 {
   text-transform: none;
-  color: #1c3041;
+  color: #000000;
+  background-color: transparent;
+  padding-top: 1em;
 }
 
 .inverse-container footer ul {
@@ -543,6 +576,16 @@ body nav:hover {
   font-size: 2em;
   list-style: none;
   margin-bottom: 0.5em;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.inverse-container footer ul li {
+  border-right: 1px solid #000000;
+}
+
+.inverse-container footer ul li:nth-child(3) {
+  border-right: none;
 }
 
 .inverse-container footer ul a {
@@ -557,20 +600,19 @@ body nav:hover {
 
 .inverse-container footer ul a p {
   font-size: 0.7em;
-  font-weight: bold;
-  margin-right: 10px;
-  margin-left: 20px;
+  padding-right: 10px;
+  padding-left: 20px;
   vertical-align: middle;
 }
 
 .inverse-container footer ul a i {
-  color: #1c3041;
+  color: #000000;
 }
 
 .hidden {
   opacity: 0;
-  -webkit-transform: translateX(-100vw);
-          transform: translateX(-100vw);
+  -webkit-transform: translateX(100vw);
+          transform: translateX(100vw);
 }
 
 @-webkit-keyframes show-element {
