@@ -209,6 +209,7 @@ body nav:hover {
 .inverse-container .name h2 {
   font-size: 2em;
   font-weight: 100;
+  color: transparent;
 }
 
 .inverse-container .name #cta-btn {
@@ -232,6 +233,38 @@ body nav:hover {
 
 .inverse-container .name #cta-btn:visited {
   color: inherit;
+}
+
+.inverse-container h2 {
+  text-align: center;
+  line-height: 2em;
+  color: #1c3041;
+  width: 100%;
+  text-transform: uppercase;
+}
+
+@media (min-width: 400px) {
+  .inverse-container h2 {
+    font-size: 1.1em;
+  }
+}
+
+@media (min-width: 600px) {
+  .inverse-container h2 {
+    font-size: 1.5em;
+  }
+}
+
+@media (min-width: 1440px) {
+  .inverse-container h2 {
+    font-size: 2em;
+  }
+}
+
+@media (min-width: 2560px) {
+  .inverse-container h2 {
+    font-size: 2.5em;
+  }
 }
 
 .inverse-container #bio {
@@ -267,35 +300,10 @@ body nav:hover {
   }
 }
 
-.inverse-container #bio h2,
 .inverse-container #bio p {
   text-align: center;
   line-height: 2em;
   color: #1c3041;
-}
-
-@media (min-width: 400px) {
-  .inverse-container #bio h2 {
-    font-size: 1.1em;
-  }
-}
-
-@media (min-width: 600px) {
-  .inverse-container #bio h2 {
-    font-size: 1.5em;
-  }
-}
-
-@media (min-width: 1440px) {
-  .inverse-container #bio h2 {
-    font-size: 2em;
-  }
-}
-
-@media (min-width: 2560px) {
-  .inverse-container #bio h2 {
-    font-size: 2.5em;
-  }
 }
 
 .inverse-container #bio p {
@@ -306,28 +314,6 @@ body nav:hover {
 @media (min-width: 600px) {
   .inverse-container #bio p {
     font-size: 1.1em;
-  }
-}
-
-.inverse-container #portfolio h2 {
-  text-align: center;
-  width: 100%;
-  text-transform: uppercase;
-  color: transparent;
-  color: #1c3041;
-  -webkit-transform: skewX(-5deg);
-          transform: skewX(-5deg);
-}
-
-@media (min-width: 900px) {
-  .inverse-container #portfolio h2 {
-    font-size: 2em;
-  }
-}
-
-@media (min-width: 2560px) {
-  .inverse-container #portfolio h2 {
-    font-size: 2.5em;
   }
 }
 
@@ -414,6 +400,23 @@ body nav:hover {
   font-size: 1.4em;
 }
 
+.inverse-container #portfolio article .project-text p {
+  margin: 1em 0.5em 0em;
+}
+
+@media (min-width: 500px) {
+  .inverse-container #portfolio article .project-text p {
+    font-size: 1.1em;
+  }
+}
+
+@media (min-width: 800px) {
+  .inverse-container #portfolio article .project-text p {
+    font-size: 1.2em;
+    margin: 2em 1em 0em;
+  }
+}
+
 .inverse-container #portfolio article .project-links {
   position: absolute;
   width: 100%;
@@ -443,13 +446,26 @@ body nav:hover {
 }
 
 .inverse-container #portfolio article:hover .project-links {
-  height: 30%;
+  height: 25%;
   bottom: 0;
 }
 
 .inverse-container #portfolio article:hover .project-text {
-  padding-top: 2em;
-  height: 70%;
+  height: 75%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.inverse-container #portfolio article:hover h3 {
+  display: none;
 }
 
 .inverse-container #skills ul {
@@ -494,6 +510,29 @@ body nav:hover {
   padding-right: 10px;
 }
 
+.inverse-container footer {
+  background-color: rgba(255, 255, 255, 0.9);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 50px;
+}
+
+.inverse-container footer h2 {
+  text-transform: none;
+  color: #1c3041;
+}
+
 .inverse-container footer ul {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -503,80 +542,29 @@ body nav:hover {
           justify-content: center;
   font-size: 2em;
   list-style: none;
+  margin-bottom: 0.5em;
 }
 
-.inverse-container footer ul li {
-  margin: 0.5em;
+.inverse-container footer ul a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 
-.inverse-container footer ul li i {
-  color: #1c3041;
-}
-
-.inverse-container footer #modal {
-  position: fixed;
-  display: none;
-  z-index: 2;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  color: #f5f0f6;
-  background-color: rgba(0, 0, 0, 0.6);
-}
-
-.inverse-container footer #modal #modal-content {
-  background-color: #1c3041;
-  width: 70%;
-  height: auto;
-  margin: 10% auto;
-  padding: 12px;
-  font-size: 16px;
-  line-height: 1.5em;
-  -webkit-transition: margin-right 1s;
-  transition: margin-right 1s;
-  position: relative;
-  -webkit-transform: skewX(-5deg);
-          transform: skewX(-5deg);
-}
-
-.inverse-container footer #modal #modal-content input,
-.inverse-container footer #modal #modal-content label {
-  display: block;
-  text-align: left;
-  margin: 0;
-}
-
-.inverse-container footer #modal #modal-content #modal-x {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  color: #f5f0f6;
-}
-
-.inverse-container footer #modal #modal-content #email-input,
-.inverse-container footer #modal #modal-content #textarea {
-  font-size: inherit;
-  border-radius: 5%;
-  font-family: inherit;
-  font-size: inherit;
-  text-align: start;
-  width: 100%;
-  padding: 5px;
-}
-
-.inverse-container footer #modal #modal-content #textarea {
-  height: 10em;
-}
-
-.inverse-container footer #modal #modal-content #submit {
-  background-color: #f5f0f6;
-  color: #1c3041;
+.inverse-container footer ul a p {
+  font-size: 0.7em;
   font-weight: bold;
-  padding: 10px;
-  font-size: 18px;
-  border-radius: 10%;
-  margin-top: 5%;
+  margin-right: 10px;
+  margin-left: 20px;
+  vertical-align: middle;
+}
+
+.inverse-container footer ul a i {
+  color: #1c3041;
 }
 
 .hidden {

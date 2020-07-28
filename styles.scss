@@ -184,6 +184,7 @@ body {
     h2 {
       font-size: 2em;
       font-weight: 100;
+      color: transparent;
     }
 
     #cta-btn {
@@ -209,6 +210,21 @@ body {
     }
   }
 
+  h2 {
+    text-align: center;
+    line-height: 2em;
+    color: $dark-color;
+    // color: #1c3041;
+    width: 100%;
+    text-transform: uppercase;
+      // transform: skewX(-5deg);
+    
+    @media (min-width: 400px) {font-size: 1.1em;}
+    @media (min-width: 600px) {font-size: 1.5em;}
+    @media (min-width: 1440px) {font-size: 2em;}
+    @media (min-width: 2560px) {font-size: 2.5em;}
+  }
+
   /* BIO */
   #bio {
     display: flex;
@@ -222,19 +238,19 @@ body {
     @media (min-width: 900px) {padding: 10% 6em 30%;}
     @media (min-width: 2560px) {padding: 10% 10em 30%;}
 
-    h2,
+    // h2,
     p {
       text-align: center;
       line-height: 2em;
       color: $dark-color;
     }
 
-    h2 {
-      @media (min-width: 400px) {font-size: 1.1em;}
-      @media (min-width: 600px) {font-size: 1.5em;}
-      @media (min-width: 1440px) {font-size: 2em;}
-      @media (min-width: 2560px) {font-size: 2.5em;}
-    }
+    // h2 {
+    //   @media (min-width: 400px) {font-size: 1.1em;}
+    //   @media (min-width: 600px) {font-size: 1.5em;}
+    //   @media (min-width: 1440px) {font-size: 2em;}
+    //   @media (min-width: 2560px) {font-size: 2.5em;}
+    // }
 
     p {
       font-size: 1em;
@@ -245,16 +261,6 @@ body {
 
   /* PORTFOLIO */
   #portfolio {
-    h2 {
-      text-align: center;
-      width: 100%;
-      text-transform: uppercase;
-      color: transparent;
-      color: $dark-color;
-      transform: skewX(-5deg);
-      @media (min-width: 900px) {font-size: 2em;}
-      @media (min-width: 2560px) {font-size: 2.5em;}
-    }
 
     .grid-container {
       display: grid;
@@ -313,6 +319,9 @@ body {
         position: absolute;
         height: 2em;
         top: 0;
+        // display: flex;
+        // flex-direction: column;
+        // justify-content: space-around;
         width: 100%;
         transition-duration: 0.2s;
         overflow-y: hidden;
@@ -320,9 +329,22 @@ body {
 
         h3 {
           height: 2em;
-          // padding-top: 0.5em;
           z-index: 2;
           font-size: 1.4em;
+        }
+
+        p {
+          margin: 1em 0.5em 0em;
+          
+          @media (min-width: 500px) {
+            font-size: 1.1em;
+          }
+          @media (min-width: 800px) {
+            font-size: 1.2em;
+            margin: 2em 1em 0em;
+          }
+
+
         }
       }
 
@@ -347,19 +369,30 @@ body {
       }
 
       &:hover .project-links {
-        height: 30%;
+        height: 25%;
         bottom: 0;
       }
 
       &:hover .project-text {
-        padding-top: 2em;
-        height: 70%;
+        height: 75%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      &:hover h3 {
+        display: none;
       }
       
     }
   }
   /* SKILLS */
   #skills {
+
+    // h2 {
+    //   color: $dark-color;
+    // }
+
     ul {
       display: flex;
       flex-wrap: wrap;
@@ -393,14 +426,38 @@ body {
 
   /* CONTACT */
   footer {
+    background-color: rgba(255, 255, 255, 0.9);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+
+    h2 {
+      text-transform: none;
+      color: $dark-color;
+    }
+
     ul {
       display: flex;
       justify-content: center;
       font-size: 2em;
       list-style: none;
+      margin-bottom: 0.5em;
 
-      li {
-        margin: 0.5em;
+      a {
+        // margin: 0.5em;
+        display: flex;
+        flex-direction: row;
+
+         p {
+           font-size: 0.7em;
+           font-weight: bold;
+           margin-right: 10px;
+           margin-left: 20px;
+           vertical-align: middle;
+
+         }
 
         i {
           color: $dark-color;
@@ -408,69 +465,69 @@ body {
       }
     }
     
-    #modal {
-      position: fixed;
-      display: none;
-      z-index: 2;
-      left: 0;
-      top: 0;
-      height: 100%;
-      width: 100%;
-      color: $light-color;
-      background-color: rgba(0, 0, 0, 0.6);
+    // #modal {
+    //   position: fixed;
+    //   display: none;
+    //   z-index: 2;
+    //   left: 0;
+    //   top: 0;
+    //   height: 100%;
+    //   width: 100%;
+    //   color: $light-color;
+    //   background-color: rgba(0, 0, 0, 0.6);
 
-      #modal-content {
-        background-color: $dark-color;
-        width: 70%;
-        height: auto;
-        margin: 10% auto;
-        padding: 12px;
-        font-size: 16px;
-        line-height: 1.5em;
-        transition: margin-right 1s;
-        position: relative;
-        transform: skewX(-5deg);
+    //   #modal-content {
+    //     background-color: $dark-color;
+    //     width: 70%;
+    //     height: auto;
+    //     margin: 10% auto;
+    //     padding: 12px;
+    //     font-size: 16px;
+    //     line-height: 1.5em;
+    //     transition: margin-right 1s;
+    //     position: relative;
+    //     transform: skewX(-5deg);
 
-        input,
-        label {
-          display: block;
-          text-align: left;
-          margin: 0;
-        }
+    //     input,
+    //     label {
+    //       display: block;
+    //       text-align: left;
+    //       margin: 0;
+    //     }
 
-        #modal-x {
-          position: absolute;
-          top: 10px;
-          right: 10px;
-          color: $light-color;
-        }
+    //     #modal-x {
+    //       position: absolute;
+    //       top: 10px;
+    //       right: 10px;
+    //       color: $light-color;
+    //     }
       
-        #email-input,
-        #textarea {
-          font-size: inherit;
-          border-radius: 5%;
-          font-family: inherit;
-          font-size: inherit;
-          text-align: start;
-          width: 100%;
-          padding: 5px;
-        }
+    //     #email-input,
+    //     #textarea {
+    //       font-size: inherit;
+    //       border-radius: 5%;
+    //       font-family: inherit;
+    //       font-size: inherit;
+    //       text-align: start;
+    //       width: 100%;
+    //       padding: 5px;
+    //     }
       
-        #textarea {
-          height: 10em;
-        }
+    //     #textarea {
+    //       height: 10em;
+    //     }
       
-        #submit {
-          background-color: $light-color;
-          color: $dark-color;
-          font-weight: bold;
-          padding: 10px;
-          font-size: 18px;
-          border-radius: 10%;
-          margin-top: 5%;
-        }
-      }
-    }  
+    //     #submit {
+    //       background-color: $light-color;
+    //       color: $dark-color;
+    //       font-weight: bold;
+    //       padding: 10px;
+    //       font-size: 18px;
+    //       border-radius: 10%;
+    //       margin-top: 5%;
+    //     }
+    //   }
+    // }  
   }
 }
 

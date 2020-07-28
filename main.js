@@ -24,37 +24,37 @@ projectsMap('.grid-container')
 
 // ANIMATE EMAIL MODAL
 
-const modal = document.querySelector('#modal');
-const modalContent = document.querySelector('#modal-content');
+// const modal = document.querySelector('#modal');
+// const modalContent = document.querySelector('#modal-content');
 
-function hideModal () {
-  setTimeout(() => {
-    modal.style.display = 'none';
-  }, 300);
-}
+// function hideModal () {
+//   setTimeout(() => {
+//     modal.style.display = 'none';
+//   }, 300);
+// }
 
-function slideBack () {
-  modalContent.classList.remove('slide-up');    
-  modalContent.classList.add('slide-back');
-}
+// function slideBack () {
+//   modalContent.classList.remove('slide-up');    
+//   modalContent.classList.add('slide-back');
+// }
 
-document.querySelector('#email').addEventListener('click',() => {
-  modal.style.display = 'block';
-  modalContent.classList.remove('slide-back');    
-  modalContent.classList.add('slide-up');
-});
+// document.querySelector('#email').addEventListener('click',() => {
+//   modal.style.display = 'block';
+//   modalContent.classList.remove('slide-back');    
+//   modalContent.classList.add('slide-up');
+// });
 
-document.querySelector('#modal-x').addEventListener('click', () => {
-  slideBack();
-  hideModal();
-});
+// document.querySelector('#modal-x').addEventListener('click', () => {
+//   slideBack();
+//   hideModal();
+// });
 
-modal.addEventListener('click', () => {
-  if (event.target === modal) {
-    slideBack();
-    hideModal();
-  }
-});
+// modal.addEventListener('click', () => {
+//   if (event.target === modal) {
+//     slideBack();
+//     hideModal();
+//   }
+// });
 
 animateBackground();
 animateOnScroll();
