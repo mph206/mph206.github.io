@@ -16,22 +16,16 @@ export const animateBackground = () => {
   const checkPosition = () => {
     for (let i = 0; i < elements.length; i++) {
       let positionFromTop = elements[i].getBoundingClientRect().top;
-      console.log(windowHeight - positionFromTop)
-      console.log(windowHeight);
 
-      if (windowHeight - positionFromTop <= windowHeight) {
+      if (positionFromTop - windowHeight <= 0) {
         containers[0].classList.add('background-left');
         containers[1].classList.add('background-left');
 
       } 
-      if (windowHeight - positionFromTop === 0) {
+      if (positionFromTop - windowHeight >= 0) {
           containers[0].classList.remove('background-left');
           containers[1].classList.remove('background-left');
       }
-      // if (windowHeight - positionFromTop >= windowHeight * 1.5) {
-      //   containers[0].classList.remove('background-left');
-      //   containers[1].classList.remove('background-left');
-      // }
     }
   }
 
