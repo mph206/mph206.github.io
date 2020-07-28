@@ -126,7 +126,7 @@ body nav:hover {
 
 /* SPLIT BACKGROUND */
 .container {
-  background: linear-gradient(95deg, transparent, transparent 52.5%, #f5f0f6 52.6%, #f5f0f6), url("./images/stars-landscape.jpg");
+  background: linear-gradient(95deg, transparent, transparent 52.5%, #f5f0f6 52.6%, #f5f0f6), url("./images/stars-landscape.jpg") center;
   background-size: 200% 100%, cover;
   background-attachment: fixed;
   min-height: 100vh;
@@ -136,7 +136,7 @@ body nav:hover {
 }
 
 .inverse-container {
-  background: linear-gradient(95deg, #f5f0f6, #f5f0f6 52.5%, transparent 52.6%, transparent), url("./images/stars-landscape.jpg");
+  background: linear-gradient(95deg, #f5f0f6, #f5f0f6 52.5%, transparent 52.6%, transparent), url("./images/stars-landscape.jpg") center;
   background-size: 200% 100%, cover;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -720,10 +720,10 @@ body nav:hover {
 }
 
 .background-middle {
-  background-position: 56% 0%, 0% 0%;
+  background-position: 56% center, center center;
 }
 
 .background-left {
-  background-position: 100% 0%, 0% 0%;
+  background-position: 100% center, center center;
 }
 /*# sourceMappingURL=styles.css.map */

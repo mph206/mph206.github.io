@@ -119,7 +119,7 @@ body {
 /* SPLIT BACKGROUND */
 
 .container {
-  background: linear-gradient(95deg, transparent, transparent 52.5%, $light-color 52.6%, $light-color), $background;
+  background: linear-gradient(95deg, transparent, transparent 52.5%, $light-color 52.6%, $light-color), $background center;
   background-size: 200% 100%, cover;
   background-attachment: fixed;
   min-height: 100vh;
@@ -128,7 +128,7 @@ body {
 }
 
 .inverse-container {
-  background: linear-gradient(95deg, $light-color, $light-color 52.5%, transparent 52.6%, transparent), $background;
+  background: linear-gradient(95deg, $light-color, $light-color 52.5%, transparent 52.6%, transparent), $background center;
   background-size: 200% 100%, cover;
   display: flex;
   flex-direction: column;
@@ -571,9 +571,9 @@ body {
 }
 
 .background-middle {
-  background-position: 56% 0%, 0% 0%;
+  background-position: 56% center, center center;
 }
 
 .background-left {
-  background-position: 100% 0%, 0% 0%;
+  background-position: 100% center, center center;
 }
