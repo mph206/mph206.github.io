@@ -118,7 +118,7 @@ body nav a:hover {
 body .fa-bars:hover ~ nav,
 body nav:hover {
   opacity: 1;
-  height: 203px;
+  height: 270px;
   width: 6.5em;
   -webkit-transition-duration: 0.2s;
           transition-duration: 0.2s;
