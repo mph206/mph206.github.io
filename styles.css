@@ -79,8 +79,10 @@ body nav {
   overflow-y: hidden;
 }
 
-body nav:not(:focus):hover {
-  height: 0;
+@media (hover: none) {
+  body nav:not(:focus):hover {
+    height: 0;
+  }
 }
 
 body nav ul {
@@ -248,10 +250,6 @@ body nav:hover {
   background-color: transparent;
 }
 
-.inverse-container .name #cta-btn:hover {
-  letter-spacing: 0.5em;
-}
-
 .inverse-container .name #cta-btn:visited {
   color: inherit;
 }
@@ -263,18 +261,8 @@ body nav:hover {
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
   display: inline;
-}
-
-@media (min-width: 400px) {
-  .inverse-container h2 {
-    font-size: 1.1em;
-  }
-}
-
-@media (min-width: 600px) {
-  .inverse-container h2 {
-    font-size: 1.5em;
-  }
+  font-size: 1.2em;
+  padding-bottom: 10px;
 }
 
 @media (min-width: 1440px) {
@@ -326,9 +314,6 @@ body nav:hover {
   color: #000000;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
-}
-
-.inverse-container #bio p {
   font-size: 1em;
   font-weight: 500;
 }
@@ -336,6 +321,12 @@ body nav:hover {
 @media (min-width: 600px) {
   .inverse-container #bio p {
     font-size: 1.1em;
+  }
+}
+
+@media (min-width: 1440px) {
+  .inverse-container #bio p {
+    font-size: 1.2em;
   }
 }
 
@@ -565,6 +556,29 @@ body nav:hover {
   text-align: center;
 }
 
+.inverse-container footer p {
+  text-align: center;
+  line-height: 1.5em;
+  color: #000000;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  font-size: 1em;
+  padding: 1em;
+  font-weight: 500;
+}
+
+@media (min-width: 600px) {
+  .inverse-container footer p {
+    font-size: 1.1em;
+  }
+}
+
+@media (min-width: 1440px) {
+  .inverse-container footer p {
+    font-size: 1.2em;
+  }
+}
+
 .inverse-container footer h2 {
   text-transform: none;
   color: #000000;
@@ -606,8 +620,7 @@ body nav:hover {
 
 .inverse-container footer ul a p {
   font-size: 0.7em;
-  padding-right: 10px;
-  padding-left: 20px;
+  padding: 0px 10px 0px 20px;
   vertical-align: middle;
 }
 
