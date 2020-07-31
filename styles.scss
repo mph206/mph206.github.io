@@ -76,6 +76,10 @@ body {
     width: 6.5em;
     overflow-y: hidden;
 
+    &:not(:focus):hover {
+      height: 0;
+    }
+
     ul {
       display: flex;
       flex-direction: column;
@@ -85,7 +89,6 @@ body {
       li {
         width: 100%;
       }
-
     }
 
     a {
@@ -221,7 +224,7 @@ body {
     text-align: center;
     color: $dark-color;
     text-transform: uppercase;
-    // backface-visibility: hidden;
+    backface-visibility: hidden;
     display: inline;
     
     @media (min-width: 400px) {font-size: 1.1em;}
@@ -360,9 +363,6 @@ body {
         position: absolute;
         height: 2em;
         top: 0;
-        // display: flex;
-        // flex-direction: column;
-        // justify-content: space-around;
         width: 100%;
         transition-duration: 0.2s;
         overflow-y: hidden;
@@ -384,8 +384,6 @@ body {
             font-size: 1.2em;
             margin: 2em 1em 0em;
           }
-
-
         }
       }
 
@@ -424,7 +422,6 @@ body {
       &:hover h3 {
         display: none;
       }
-      
     }
   }
 
@@ -442,7 +439,6 @@ body {
     border-top: 1px solid $dark-color;
     text-align: center;
 
-
     h2 {
       text-transform: none;
       color: $dark-color;
@@ -458,18 +454,14 @@ body {
       margin-bottom: 0.5em;
       flex-wrap: wrap;
 
-      
-
       li {
        border-right: 1px solid $dark-color;
 
-       &:nth-child(3) {
-        border-right: none;
-      }
+        &:nth-child(3) {
+          border-right: none;
+        }
 
       }
-
-      
 
       a {
         display: flex;
@@ -477,12 +469,9 @@ body {
 
          p {
            font-size: 0.7em;
-          //  font-weight: bold;
            padding-right: 10px;
            padding-left: 20px;
-           vertical-align: middle;
-
-           
+           vertical-align: middle;           
          }
 
         i {
@@ -513,49 +502,8 @@ body {
 
 .is-visible {
   animation: show-element 0.4s;
-  // will-change: translate;
   opacity: 1;
   transition-duration: 1s;
-}
-
-
-// MODAL ANIMATIONS
-/* Animate email modal */
-
-@keyframes slide-up {
-  from {
-    transform: translateY(100%);
-    opacity: 0;
-  }
-
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-.slide-up {
-  animation-name: slide-up;
-  animation-duration: 0.3s;
-  animation-fill-mode: both;
-}
-
-@keyframes slide-back {
-  from {
-    transform: translateY(0);
-    opacity: 1;
-  }
-
-  to {
-    transform: translateY(100%);
-    opacity: 0;
-  }
-}
-
-.slide-back {
-  animation-name: slide-back;
-  animation-duration: 0.3s;
-  animation-fill-mode: both;
 }
 
 .background-middle {

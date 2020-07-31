@@ -79,6 +79,10 @@ body nav {
   overflow-y: hidden;
 }
 
+body nav:not(:focus):hover {
+  height: 0;
+}
+
 body nav ul {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -256,6 +260,8 @@ body nav:hover {
   text-align: center;
   color: #000000;
   text-transform: uppercase;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
   display: inline;
 }
 
@@ -647,76 +653,6 @@ body nav:hover {
   opacity: 1;
   -webkit-transition-duration: 1s;
           transition-duration: 1s;
-}
-
-/* Animate email modal */
-@-webkit-keyframes slide-up {
-  from {
-    -webkit-transform: translateY(100%);
-            transform: translateY(100%);
-    opacity: 0;
-  }
-  to {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-    opacity: 1;
-  }
-}
-@keyframes slide-up {
-  from {
-    -webkit-transform: translateY(100%);
-            transform: translateY(100%);
-    opacity: 0;
-  }
-  to {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-.slide-up {
-  -webkit-animation-name: slide-up;
-          animation-name: slide-up;
-  -webkit-animation-duration: 0.3s;
-          animation-duration: 0.3s;
-  -webkit-animation-fill-mode: both;
-          animation-fill-mode: both;
-}
-
-@-webkit-keyframes slide-back {
-  from {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-    opacity: 1;
-  }
-  to {
-    -webkit-transform: translateY(100%);
-            transform: translateY(100%);
-    opacity: 0;
-  }
-}
-
-@keyframes slide-back {
-  from {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-    opacity: 1;
-  }
-  to {
-    -webkit-transform: translateY(100%);
-            transform: translateY(100%);
-    opacity: 0;
-  }
-}
-
-.slide-back {
-  -webkit-animation-name: slide-back;
-          animation-name: slide-back;
-  -webkit-animation-duration: 0.3s;
-          animation-duration: 0.3s;
-  -webkit-animation-fill-mode: both;
-          animation-fill-mode: both;
 }
 
 .background-middle {
