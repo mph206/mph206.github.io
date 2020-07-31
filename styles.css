@@ -223,6 +223,8 @@ body nav:hover {
   background-color: transparent;
   display: block;
   font-family: 'Raleway', 'Work Sans', sans-serif;
+  -webkit-backface-visibility: visible;
+          backface-visibility: visible;
 }
 
 .inverse-container .name #cta-btn {
@@ -253,10 +255,7 @@ body nav:hover {
 .inverse-container h2 {
   text-align: center;
   color: #000000;
-  margin-bottom: 10px;
-  width: 100%;
   text-transform: uppercase;
-  background-color: #f5f0f6;
   display: inline;
 }
 
@@ -319,7 +318,8 @@ body nav:hover {
   text-align: center;
   line-height: 1.5em;
   color: #000000;
-  background-color: #f5f0f6;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
 }
 
 .inverse-container #bio p {

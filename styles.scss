@@ -1,4 +1,4 @@
-$dark-color: #000000; //1c3041
+$dark-color: #000000; 
 $light-color: #f5f0f6;
 $background: url("./images/stars-landscape.jpg");
 $transparent: transparent;
@@ -28,7 +28,6 @@ body {
   }
 
   // NAVIGATION
-
   .fa-bars,
   .fa-arrow-right {
     color: $dark-color;
@@ -54,8 +53,6 @@ body {
     transform: rotate(90deg);
     transition-duration: 0.2s;
     opacity: 0;
-    // background-color: $dark-color;
-    // color: $light-color;
   }
 
   .fa-bars:hover~.fa-arrow-right,
@@ -192,6 +189,7 @@ body {
       background-color: transparent;
       display: block;
       font-family: 'Raleway', 'Work Sans', sans-serif;
+      backface-visibility: visible;
     }
 
     #cta-btn {
@@ -222,10 +220,8 @@ body {
   h2 {
     text-align: center;
     color: $dark-color;
-    margin-bottom: 10px;
-    width: 100%;
     text-transform: uppercase;
-    background-color: $light-color;
+    // backface-visibility: hidden;
     display: inline;
     
     @media (min-width: 400px) {font-size: 1.1em;}
@@ -241,8 +237,6 @@ body {
     padding: 10% 3em 1em;
     color: $dark-color;
     min-height: 100vh;
-    // background-clip: border-box;
-    // -webkit-background-clip: border-box; 
 
     @media (min-width: 600px) {padding: 10% 4em 1em;}
     @media (min-width: 900px) {padding: 10% 6em 1em}
@@ -253,10 +247,7 @@ body {
       text-align: center;
       line-height: 1.5em;
       color: $dark-color;
-      background-color: $light-color;
-
-      // background-clip: border-box;
-      // -webkit-background-clip: border-box; 
+      backface-visibility: hidden;
     }
 
     // h2 {
@@ -286,8 +277,6 @@ body {
         padding: 5px 10px;
         margin: 5px;
         border-radius: 2px;
-        // background-color: $light-color;
-        // background-color: rgba(255, 255, 255,0.8);
         align-items: center;
 
         @media (min-width: 500px) {
@@ -298,7 +287,6 @@ body {
         p {
           display: inline;
           font-size: inherit;
-          // background-color: rgba(255, 255, 255,0.8);
         }
 
         img {
