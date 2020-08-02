@@ -495,6 +495,10 @@ body {
     transform: translateX(100vw);
   }
 
+  // 90% {
+  //   transform: translateX(-10vw);
+  // } 
+
   100% {
     transform: translateX(0);
     opacity: 1;
@@ -505,6 +509,11 @@ body {
   animation: show-element 0.4s;
   opacity: 1;
   transition-duration: 1s;
+  transition-timing-function: cubic-bezier(.8,-.5,.2,1.4);
+
+  @media (min-width: 900px) {
+    transition-duration: 1.3s;
+  }
 }
 
 .background-middle {

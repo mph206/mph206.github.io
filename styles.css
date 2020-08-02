@@ -668,6 +668,15 @@ body nav:hover {
   opacity: 1;
   -webkit-transition-duration: 1s;
           transition-duration: 1s;
+  -webkit-transition-timing-function: cubic-bezier(0.8, -0.5, 0.2, 1.4);
+          transition-timing-function: cubic-bezier(0.8, -0.5, 0.2, 1.4);
+}
+
+@media (min-width: 900px) {
+  .is-visible {
+    -webkit-transition-duration: 1.3s;
+            transition-duration: 1.3s;
+  }
 }
 
 .background-middle {
