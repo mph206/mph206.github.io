@@ -116,6 +116,8 @@ body {
     height: 270px;
     width: 6.5em;
     transition-duration: 0.2s;
+    border-top: 1px solid $dark-color;
+    border-bottom: 1px solid $dark-color;
   }
 }
 
