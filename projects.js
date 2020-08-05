@@ -42,7 +42,7 @@ export const projects = [
         description: "An app build in React using Brewdog's Punk API, incorporating search and filters and iterating through the API response object.",
         img: "./images/punk-api.png",
         skills: "React | REST APIs | SCSS",
-        pageLink:'https://beer-browser-c3b2c.web.app/',
-        gitLink: 'https://github.com/mph206/punk-api-challenge',
+        pageLink:'/punk-api-app',
+        gitLink: 'https://github.com/mph206/punk-api-app',
     }    
 ]
