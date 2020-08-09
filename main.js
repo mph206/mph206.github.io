@@ -3,8 +3,7 @@ import animateOnScroll from './animateOnScroll.js';
 import {animateBackground} from './animateBackground.js';
 
 
-// Render projects
-const projectsMap = (element) => {
+const renderProjects = (element) => {
   document.querySelector(element).innerHTML = projects.map((project, index) => {
     return `<article id="project-${index}" class="show-on-scroll hidden">
         <img src=${project.img} alt=${project.name}>
@@ -20,42 +19,7 @@ const projectsMap = (element) => {
         </article>`
   }).join('');
 } 
-projectsMap('.grid-container')
 
-// ANIMATE EMAIL MODAL
-
-// const modal = document.querySelector('#modal');
-// const modalContent = document.querySelector('#modal-content');
-
-// function hideModal () {
-//   setTimeout(() => {
-//     modal.style.display = 'none';
-//   }, 300);
-// }
-
-// function slideBack () {
-//   modalContent.classList.remove('slide-up');    
-//   modalContent.classList.add('slide-back');
-// }
-
-// document.querySelector('#email').addEventListener('click',() => {
-//   modal.style.display = 'block';
-//   modalContent.classList.remove('slide-back');    
-//   modalContent.classList.add('slide-up');
-// });
-
-// document.querySelector('#modal-x').addEventListener('click', () => {
-//   slideBack();
-//   hideModal();
-// });
-
-// modal.addEventListener('click', () => {
-//   if (event.target === modal) {
-//     slideBack();
-//     hideModal();
-//   }
-// });
-
+renderProjects('.grid-container')
 animateBackground();
 animateOnScroll();
-// var rellax = new Rellax('.rellax');
