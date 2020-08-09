@@ -24,7 +24,7 @@ export const projects = [
     },
     {
         name: "OMDb Search",
-        description: "An app build in React leveraging as part of a one day tech-test, using OMDbs API to let users find search and view movie information.",
+        description: "An app build in React as part of a one day tech-test, using OMDbs API to let users search and view movie information.",
         img: "./images/omdb-search.png",
         skills: "React | REST APIs | SCSS",
         pageLink: '/OMDb-search',
