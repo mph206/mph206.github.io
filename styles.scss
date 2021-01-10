@@ -53,7 +53,6 @@ body {
     transform: rotate(90deg);
     transition-duration: 0.2s;
     opacity: 0;
-    // cursor: pointer;
   }
 
   .fa-bars:hover~.fa-arrow-right,
@@ -233,7 +232,6 @@ body {
     @media (min-width: 2560px) {font-size: 2.5em;}
   }
 
-  /* BIO */
   #bio {
     display: flex;
     flex-direction: column;
@@ -283,18 +281,25 @@ body {
         }
 
         img {
-          height: 24px;
+          height: 18px;
         }
 
         i, img {
           padding-right: 5px;
+          font-size: 18px;
         }
       }
     }
   }
 
-  /* PORTFOLIO */
   #portfolio {
+
+    p {
+      @media (min-width: 600px) {font-size: 1.1em;}
+      @media (min-width: 1440px) {font-size: 1.2em;}
+    }
+
+    
 
     .grid-container {
       display: grid;
@@ -494,10 +499,6 @@ body {
     opacity: 0;
     transform: translateX(100vw);
   }
-
-  // 90% {
-  //   transform: translateX(-10vw);
-  // } 
 
   100% {
     transform: translateX(0);
